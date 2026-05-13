@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.backends._legacy:_Backend"
+
+[project]
+name = "meetgrow-agent-skill"
+version = "1.0.0"
+description = "MeetGrow AI PC Agent Skill - 基于35B小模型的本地办公提效工具"
+readme = "README.md"
+license = {text = "MIT"}
+requires-python = ">=3.10"
+authors = [
+    {name = "WinClaw", email = "winclaw@meetgrow.ai"}
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Text Processing :: Speech",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0.0", "black>=24.0.0"]
+
+[project.scripts]
+meetgrow = "meetgrow_skill.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["meetgrow_skill*"]

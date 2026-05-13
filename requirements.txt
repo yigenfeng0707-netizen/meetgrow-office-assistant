@@ -1,0 +1,36 @@
+# ============================================
+# MeetGrow AI PC Agent Skill - Python Dependencies
+# ============================================
+
+# --- Core ---
+# Python >= 3.10, < 3.14
+
+# --- Agent Brain (API calls to Qwen3.6) ---
+openai>=1.30.0            # API client (supports any OpenAI-compatible endpoint)
+
+# --- OCR: PaddleOCR ---
+paddlepaddle>=2.6.0       # Deep learning framework (CPU版即可)
+paddleocr>=2.8.0          # PP-OCRv5 高精度OCR引擎
+
+# --- ASR: FunASR ---
+funasr>=1.1.0             # 阿里达摩院语音识别
+torchaudio>=2.1.0         # 音频处理 (FunASR依赖)
+torch>=2.1.0,<2.5.0       # PyTorch (CPU版)
+
+# --- TTS: edge-tts ---
+edge-tts>=6.1.0           # 微软 Edge TTS (免费，零依赖)
+aiohttp>=3.9.0            # async HTTP (edge-tts依赖)
+
+# --- Document Processing ---
+python-docx>=1.1.0        # Word 文档处理
+openpyxl>=3.1.0           # Excel 文档处理
+pillow>=10.2.0            # 图像处理
+
+# --- Utilities ---
+pydantic>=2.6.0           # 数据模型
+pyyaml>=6.0.1             # YAML 配置
+rich>=13.7.0              # 终端美化输出
+click>=8.1.7              # CLI 框架
+
+# --- Development ---
+pytest>=8.0.0             # 测试框架

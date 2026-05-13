@@ -1,0 +1,49 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Coverage
+.coverage
+coverage.json
+coverage_html/
+*.cover
+
+# pytest
+.pytest_cache/
+htmlcov/
+
+# conda
+env/
+.conda/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Models (downloaded locally)
+models/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Demo outputs
+demo_report.json
+demo_report.txt
+test_output.txt
+test_results.txt
+test_final.txt
+test_output.txt
+full_results.txt
+final_results.txt
+final_test.txt
+test_output.txt
+final_test.txt
+test_output.txt
