@@ -152,4 +152,5 @@ MeetGrow Office Assistant 通过 **小模型决策 + 本地工具执行** 的 Hy
 
 **项目地址**：[https://github.com/yigenfeng0707-netizen/meetgrow-office-assistant](https://github.com/yigenfeng0707-netizen/meetgrow-office-assistant)
 **提交包**：[Release v1.0.0](https://github.com/yigenfeng0707-netizen/meetgrow-office-assistant/releases/tag/v1.0.0)
+**研习社文章**：[https://modelscope.cn/learn/434520](https://modelscope.cn/learn/434520)
 **标签**：`Intel AI PC`、`Agent Skills`、`OCR`、`ASR`、`TTS`

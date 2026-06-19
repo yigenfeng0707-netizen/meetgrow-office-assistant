@@ -4,7 +4,7 @@
 > 
 > 基于 Qwen3.6-35B-A3B 小模型，驱动本地 AI 工具（OCR / ASR / TTS），赋能会展招商办公提效场景
 > 
-> **研习社文章**：[待替换为正式文章 URL，发布后将自动更新](https://www.modelscope.cn/notes/{PLEASE_REPLACE_WITH_REAL_ARTICLE_ID})
+> **研习社文章**：[MeetGrow Office Assistant：用 35B 小模型打造 AI PC 端侧办公智能体](https://modelscope.cn/learn/434520)
 >
 > **GitHub 仓库**：[yigenfeng0707-netizen/meetgrow-office-assistant](https://github.com/yigenfeng0707-netizen/meetgrow-office-assistant)
 >

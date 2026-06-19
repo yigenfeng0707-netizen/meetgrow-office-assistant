@@ -14,7 +14,7 @@ metadata:
   version: "1.0.0"
   tags: ["agent", "ocr", "asr", "tts", "office", "intel-ai-pc", "meetgrow"]
   competition: "AI PC Agent Skills 征文大赛"
-  article_url: "https://www.modelscope.cn/notes/{PLEASE_REPLACE_WITH_REAL_ARTICLE_ID}"
+  article_url: "https://modelscope.cn/learn/434520"
   github_repo: "https://github.com/yigenfeng0707-netizen/meetgrow-office-assistant"
   release: "https://github.com/yigenfeng0707-netizen/meetgrow-office-assistant/releases/tag/v1.0.0"
 ---
