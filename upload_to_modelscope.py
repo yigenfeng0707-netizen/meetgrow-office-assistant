@@ -13,7 +13,10 @@ import requests
 API_TOKEN = os.environ.get("MODELSCOPE_API_TOKEN", "")
 PROJECT_DIR = r"D:\meetgrow-agent-skill"
 DIST_DIR = os.path.join(PROJECT_DIR, "dist")
-ZIP_FILE = os.path.join(DIST_DIR, "meetgrow-skill-20260619-074154.zip")
+
+# 自动匹配最新的提交包
+zip_files = sorted(Path(DIST_DIR).glob("meetgrow-skill-*.zip"))
+ZIP_FILE = str(zip_files[-1]) if zip_files else os.path.join(DIST_DIR, "meetgrow-skill.zip")
 SKILL_JSON = os.path.join(DIST_DIR, "meetgrow_skill.json")
 
 # ModelScope API 端点（根据魔搭社区文档）
