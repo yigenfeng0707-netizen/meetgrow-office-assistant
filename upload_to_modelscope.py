@@ -9,11 +9,11 @@ import sys
 import json
 import requests
 
-# 配置
-API_TOKEN = "ms-7c36b22c-3e9b-40de-9352-6c753c5bd0b4"
+# 配置（请通过环境变量 MODELSCOPE_API_TOKEN 传入，避免硬编码）
+API_TOKEN = os.environ.get("MODELSCOPE_API_TOKEN", "")
 PROJECT_DIR = r"D:\meetgrow-agent-skill"
 DIST_DIR = os.path.join(PROJECT_DIR, "dist")
-ZIP_FILE = os.path.join(DIST_DIR, "meetgrow-skill-20260510-095531.zip")
+ZIP_FILE = os.path.join(DIST_DIR, "meetgrow-skill-20260619-074154.zip")
 SKILL_JSON = os.path.join(DIST_DIR, "meetgrow_skill.json")
 
 # ModelScope API 端点（根据魔搭社区文档）

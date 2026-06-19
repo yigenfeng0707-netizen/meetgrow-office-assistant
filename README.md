@@ -3,10 +3,16 @@
 > **英特尔 × 魔搭社区：AI PC Agent Skills 征文活动参赛作品**
 > 
 > 基于 Qwen3.6-35B-A3B 小模型，驱动本地 AI 工具（OCR / ASR / TTS），赋能会展招商办公提效场景
+> 
+> **研习社文章**：[待替换为正式文章 URL，发布后将自动更新](https://www.modelscope.cn/notes/{PLEASE_REPLACE_WITH_REAL_ARTICLE_ID})
+>
+> **GitHub 仓库**：[yigenfeng0707-netizen/meetgrow-office-assistant](https://github.com/yigenfeng0707-netizen/meetgrow-office-assistant)
+>
+> **提交包下载**：[Release v1.0.0](https://github.com/yigenfeng0707-netizen/meetgrow-office-assistant/releases/tag/v1.0.0)
 
 [![Python](https://img.shields.io/badge/Python-3.11+-blue.svg)](https://www.python.org/)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Test](https://img.shields.io/badge/Tests-101%2F101-passing-brightgreen.svg)](tests/)
+[![Test](https://img.shields.io/badge/Tests-186%2F186-passing-brightgreen.svg)](tests/)
 [![ModelScope](https://img.shields.io/badge/ModelScope-Skill-orange.svg)](https://modelscope.cn)
 [![AI PC](https://img.shields.io/badge/AI%20PC-Compatible-brightblue.svg)](https://modelscope.cn/brand/view/AI_PC)
 
@@ -104,11 +110,28 @@ conda activate meetgrow
 # 2. 安装依赖
 pip install -r requirements.txt
 
-# 3. 初始化模型（首次运行自动下载）
+# 3. 下载本地模型（OCR / ASR）
+python scripts/download_models.py
+
+# 4. 初始化 MeetGrow 环境
 python -m meetgrow_skill init
 
-# 4. 运行
+# 5. 运行
 python -m meetgrow_skill --help
+```
+
+### 常驻服务部署（推荐）
+
+避免每次调用重新加载模型，适合生产环境：
+
+```bash
+# 启动服务
+python server/server.py
+
+# 客户端调用
+python server/client.py ocr examples/test_card.jpg
+python server/client.py asr meeting_recording.wav
+python server/client.py tts "下午3点项目复盘" --voice 小晓
 ```
 
 ### 可选依赖
@@ -181,11 +204,11 @@ for tool in skill.tools:
 
 | 指标 | 数值 |
 |------|------|
-| 总代码行数 | ~1,200 行 |
+| 总代码行数 | ~3,500 行 |
 | 工具数量 | 6 (OCR×2, ASR, TTS, Doc×2) |
-| 测试用例 | 101 (100% 通过) |
+| 测试用例 | 186 (100% 通过) |
 | 核心模块 | 9 个 Python 模块 |
-| 文档 | README + 20KB 技术文章 |
+| 文档 | README + SKILL.md + 技术文章 |
 | 提交包 | manifest.json + zip 打包 |
 
 ---
@@ -194,7 +217,7 @@ for tool in skill.tools:
 
 ### 征文文章
 
-- **魔搭研习社**: [用 35B 小模型构建端侧 AI 办公智能体](https://modelscope.cn/events/242/AI%20PC%20Agent%20Skills%20%E5%BE%81%E6%96%87%E6%B4%BB%E5%8A%A8)
+- **魔搭研习社**: [用 35B 小模型构建端侧 AI 办公智能体](https://www.modelscope.cn/notes/{PLEASE_REPLACE_WITH_REAL_ARTICLE_ID})（发布后将替换为真实文章 URL）
 - **CSDN**: [英特尔 AI PC Agent Skills 征文](https://inteldevkit.csdn.net/69f40f920a2f6a37c5a7228f.html)
 
 ### 技术栈
@@ -258,21 +281,23 @@ python -m unittest tests.test_tts -v
 
 ### 测试结果
 
-> 101 个测试全部通过，核心模块均有完整覆盖
+> 186 个测试全部通过，核心模块均有完整覆盖
 
 | 模块 | 测试数 | 通过率 | 覆盖范围 |
 |------|--------|--------|----------|
 | test_config | 8 | 100% | 配置管理、默认值、工作目录 |
 | test_skill | 15 | 100% | 元数据、6 工具定义、OpenAI 格式 |
 | test_base | 3 | 100% | 抽象基类、继承、路径校验 |
-| test_doc | 13 | 100% | 会议纪要、智能归档、错误处理 |
+| test_doc | 19 | 100% | 会议纪要、智能归档、错误处理 |
 | test_memory | 15 | 100% | 消息管理、上下文持久化、会话清理 |
-| test_ocr | 6 | 100% | 名片识别、通用识别、错误处理 |
+| test_ocr | 26 | 100% | 名片识别、通用识别、错误处理 |
 | test_orchestrator | 5 | 100% | 工具注册、链式执行、状态管理 |
-| test_asr | 3 | 100% | 语音转写、异常降级、Schema 验证 |
+| test_asr | 6 | 100% | 语音转写、异常降级、Schema 验证 |
 | test_tts | 15 | 100% | 语音合成、声音别名、输入校验 |
 | test_integration | 18 | 100% | 端到端工作流、场景模拟、配置集成 |
-| **合计** | **101** | **100% ✅** | **核心模块全覆盖** |
+| test_agent | 26 | 100% | Agent 初始化、工具调用、结果整合 |
+| test_cli | 5 | 100% | 命令行入口、参数解析 |
+| **合计** | **186** | **100% ✅** | **核心模块全覆盖** |
 
 ### 快速验证
 
